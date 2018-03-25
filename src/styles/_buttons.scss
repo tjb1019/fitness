@@ -1,0 +1,17 @@
+@import 'variables.scss';
+
+button {
+  text-transform: uppercase;
+  padding: 10px 15px;
+  box-shadow: $shadow;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: $shadow-dark;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: $shadow-dark;
+  }
+}

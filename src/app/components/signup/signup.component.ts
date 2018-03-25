@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { UserService } from '@services/user.service';
 
 import { environment } from '@environments/environment';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
-  loggingIn: boolean;
+  registering: boolean;
 
   constructor(
     private http: HttpClient,
@@ -24,14 +24,14 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(): void {
-    this.loggingIn = true;
-    const form = document.forms['loginForm'];
+  signup(): void {
+    this.registering = true;
+    const form = document.forms['signupForm'];
     let body = {
       username: form.username.value,
       password: form.password.value
     }
-    this.http.post(`${environment.apiPath}/login`, body).subscribe(
+    this.http.post(`${environment.apiPath}/users`, body).subscribe(
       response => {
         localStorage.setItem('token', response['token']);
         this.user.initUser(form.username.value, form.password.value);
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       error => {
         console.error(error);
       },
-      () => this.loggingIn = false
+      () => this.registering = false
     );
   }
 

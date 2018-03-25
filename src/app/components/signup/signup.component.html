@@ -1,0 +1,11 @@
+<main id="signup">
+  <h1 *ngIf="!registering">Sign Up!</h1>
+  <form name="signupForm" (submit)="signup()" *ngIf="!registering">
+    <label for="username">Username</label>
+    <input type="text" name="username" autofocus="true">
+    <label for="password">Password</label>
+    <input type="password" name="password">
+    <button type="submit">Register</button>
+  </form>
+  <div class="loader" *ngIf="registering">Registering...</div>
+</main>

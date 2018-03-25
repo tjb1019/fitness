@@ -4,6 +4,8 @@
     "baseUrl": "src",
     "paths": {
       "@environments/*": ["environments/*"],
+      "@models/*": ["models/*"],
+      "@guards/*": ["app/guards/*"],
       "@services/*": ["app/services/*"],
       "@components/*": ["app/components/*"]
     },
