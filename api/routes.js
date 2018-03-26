@@ -3,7 +3,6 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const utilties = require('./utilities');
-const constants = require('./constants');
 const User = require('./models/user').User
 
 // connect to mongodb
@@ -15,14 +14,13 @@ router.post('/login', (req, res) => {
     .then(user => {
       if (user.password == req.body.password) {
         const payload = {username: user.username};
-        const token = utilties.generateToken(payload, constants.TOKEN_EXPIRATION);
+        const token = utilties.generateToken(payload);
         res.status(200).json({token: token});
       } else {
-        res.status(401).json({message: 'Invalid password'});
+        res.status(400).json({message: 'Invalid password'});
       }
     })
     .catch(error => {
-      console.log(error);
       res.status(400).json({message: 'Invalid username'});
     });
 });
@@ -37,7 +35,7 @@ router.post('/users', (req, res) => {
   user.save()
     .then(user => {
       const payload = {username: user.username};
-      const token = utilties.generateToken(payload, constants.TOKEN_EXPIRATION);
+      const token = utilties.generateToken(payload);
       res.status(201).json({token: token});
     })
     .catch(error => res.status(500).json({message: error}));

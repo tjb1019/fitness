@@ -4,13 +4,15 @@ import {
   HttpEvent,
   HttpInterceptor,
   HttpHandler,
-  HttpRequest } from '@angular/common/http';
+  HttpRequest,
+  HttpErrorResponse} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/do';
 
 @Injectable()
 export class HttpInterceptorService implements HttpInterceptor {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('token');
@@ -19,7 +21,19 @@ export class HttpInterceptorService implements HttpInterceptor {
         headers: request.headers.set('Authorization', token)
       });
     }
-    return next.handle(request);
+    return next.handle(request).do(
+      event => {
+        // manipulate successful responses
+      },
+      error => {
+        if (error instanceof HttpErrorResponse) {
+          if (error.status == 401) {
+            console.error(error.message);
+            this.router.navigate(['/login']);
+          }
+        }
+      }
+    );
   }
 
 }
