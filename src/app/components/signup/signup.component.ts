@@ -33,10 +33,9 @@ export class SignupComponent implements OnInit {
     }
     this.http.post(`${environment.apiPath}/users`, body).subscribe(
       response => {
-        localStorage.setItem('token', response['token']);
-        this.user.initUser(form.username.value, form.password.value);
-        this.user.login();
-        this.router.navigate(['/home']);
+        const token = response['token'];
+        this.user.init(form.username.value, token);
+        this.router.navigate(['/']);
       },
       error => {
         console.error(error);

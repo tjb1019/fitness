@@ -45,7 +45,7 @@ router.post('/users', (req, res) => {
 
 // add authentication middleware for all other routes
 router.use((req, res, next) => {
-  const token = req.headers['Authorization'];
+  const token = req.headers['authorization'];
   if (token) {
     req.decoded = jwt.verify(token, process.env.FITNESS_SECRET);
     next();

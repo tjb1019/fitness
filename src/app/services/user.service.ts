@@ -6,20 +6,23 @@ import { User } from '@models/user';
 export class UserService {
 
   user: User;
-  loggedIn: boolean;
 
-  constructor() { }
-
-  initUser(username: string, password: string): void {
-    this.user = new User(username, password);
+  constructor() {
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    if (userData) {
+      this.user = new User(userData.username);
+    }
   }
 
-  login(): void {
-    this.loggedIn = true;
+  init(username: string, token: string): void {
+    this.user = new User(username);
+    localStorage.setItem('token', token);
+    localStorage.setItem('userData', JSON.stringify(this.user));
   }
 
   logout(): void {
-    this.loggedIn = false;
+    this.user = null;
+    localStorage.clear();
   }
 
 }

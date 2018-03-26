@@ -16,13 +16,8 @@ export const ROUTES: Route[] = [
     component: SignupComponent
   },
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
     canActivate: [AuthGuard]
-  },
-  {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
   }
 ];

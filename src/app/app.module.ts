@@ -4,10 +4,12 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { ROUTES } from './routes/routes';
 
 import { AuthGuard } from '@guards/auth.guard';
+import { HttpInterceptorService } from '@services/http-interceptor.service';
 import { UserService } from '@services/user.service';
 
 import { AppComponent } from './app.component';
@@ -31,6 +33,11 @@ import { HomeComponent } from './components/home/home.component';
   ],
   providers: [
     AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    },
     UserService
   ],
   bootstrap: [AppComponent]
