@@ -1,6 +1,30 @@
-//typography
-$font-primary: 'Titillium Web', sans-serif;
+// color pallette
+$color-brand: #30e8bd;
+$color-accent: #eeaa66;
+$color-primary: hsl(0, 0%, 13%);
+$color-secondary: hsl(0, 0%, 29%);
+$color-tertiary: hsl(0, 0%, 45%);
+$color-background: hsl(0, 0%, 97%);
 
-// shadows
-$shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+// gradient
+$gradient-brand: linear-gradient(90deg, rgba(48,232,189,1) 0%, rgba(102,238,206,1) 35%, rgba(209,250,240,1) 100%);
+
+// typography
+$font-sans-serif: 'Titillium Web', sans-serif;
+
+// text size
+$text-base: 10px;
+$text-header: 3.2rem;
+$text-title: 2.4rem;
+$text-body: 1.6rem;
+$text-meta: 1rem;
+
+// text weight
+$text-heavy: 700;
+$text-regular: 500;
+$text-light: 300;
+
+// shadow
 $shadow-dark: 0 4px 6px 0 hsla(0, 0%, 0%, 0.3);
+$shadow-regular: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+$shadow-light: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);

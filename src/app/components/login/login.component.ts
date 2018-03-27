@@ -13,6 +13,7 @@ import { environment } from '@environments/environment';
 })
 export class LoginComponent implements OnInit {
 
+  form: HTMLFormElement;
   loggingIn: boolean;
 
   constructor(
@@ -24,17 +25,20 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngAfterViewInit() {
+    this.form = document.forms['loginForm'];
+  }
+
   login(): void {
     this.loggingIn = true;
-    const form = document.forms['loginForm'];
     let body = {
-      username: form.username.value,
-      password: form.password.value
+      username: this.form.username.value,
+      password: this.form.password.value
     }
     this.http.post(`${environment.apiPath}/login`, body).subscribe(
       response => {
         const token = response['token'];
-        this.user.init(form.username.value, token);
+        this.user.init(this.form.username.value, token);
         this.router.navigate(['/']);
       },
       error => {

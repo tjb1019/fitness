@@ -5,6 +5,7 @@
     "paths": {
       "@environments/*": ["environments/*"],
       "@models/*": ["models/*"],
+      "@utilities/*": ["utilities/*"],
       "@guards/*": ["app/guards/*"],
       "@services/*": ["app/services/*"],
       "@components/*": ["app/components/*"]

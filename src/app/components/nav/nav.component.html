@@ -1,0 +1,18 @@
+<nav>
+  <!-- left -->
+  <img id="avatar" src="assets/images/avatar.jpg" alt="User avatar">
+
+  <!-- center -->
+  <ul>
+    <li *ngFor="let navItem of navItems"
+        routerLink="{{ navItem.path }}"
+        (click)="activeRoute = navItem"
+        [class.active]="navItem == activeRoute">
+      {{ navItem.name }}
+    </li>
+  </ul>
+
+  <!-- right -->
+
+  <img id="exit" src="assets/icons/exit.svg" alt="Logout icon" (click)="user.logout()">
+</nav>

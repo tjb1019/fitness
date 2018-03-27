@@ -3,7 +3,8 @@
 button {
   text-transform: uppercase;
   padding: 10px 15px;
-  box-shadow: $shadow;
+  box-shadow: $shadow-regular;
+  border: none;
 
   &:hover {
     cursor: pointer;
@@ -11,7 +12,19 @@ button {
   }
 
   &:focus {
-    outline: 0;
-    box-shadow: $shadow-dark;
+    outline-color: $color-brand;
+  }
+
+  // primary
+  &.primary {
+    background: transparent;
+    border: 1px solid $color-brand;
+    color: $color-brand;
+    transition: 0.15s;
+
+    &:hover {
+      background: $color-brand;
+      color: $color-primary;
+    }
   }
 }

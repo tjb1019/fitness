@@ -1,0 +1,78 @@
+@import 'variables';
+
+main {
+  padding: 0 60px;
+  background: $color-background;
+  animation: fadeIn 0.5s;
+
+  div.banner {
+    height: 125px;
+    width: 100%;
+    display: flex;
+
+    div.welcome {
+      flex: 1;
+      display: flex;
+      align-items: center;
+
+      h1 {
+        margin: 0;
+        padding: 0 10px;
+        border-radius: 5px;
+        background: $color-brand;
+        color: white;
+      }
+    }
+
+    div.date {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      span {
+        font-size: $text-header;
+        font-weight: $text-heavy;
+      }
+
+      img {
+        height: 40%;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  div.overview {
+    display: flex;
+    height: 500px;
+
+    div.card {
+      flex: 1;
+      background: white;
+      box-shadow: $shadow-regular;
+
+      &:nth-child(1) {
+        margin-right: 25px;
+      }
+
+      &:nth-child(2) {
+        div.card-header {
+          background-image: url('~assets/images/cardio.jpg');
+          background-position: bottom;
+        }
+      }
+
+      div.card-header {
+        display: flex;
+        align-items: center;
+        height: 100px;
+        padding-left: 10px;
+        background-image: url('~assets/images/strength.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+      }
+    }
+  }
+}

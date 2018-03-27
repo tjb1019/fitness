@@ -1,1 +1,23 @@
-<p>{{ user.user.username }}</p>
+<main>
+  <div class="banner">
+    <div class="welcome">
+      <h1>Good morning, {{ user.user.username }}!</h1>
+    </div>
+    <div class="date">
+      <img src="assets/icons/calendar.svg" alt="Calendar icon">
+      <span>{{ dayText }}, {{ month }} {{ dayNum }}, {{ year }}</span>
+    </div>
+  </div>
+  <div class="overview">
+    <div class="card">
+      <div class="card-header">
+        <h2>Strength</h2>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2>Cardio</h2>
+      </div>
+    </div>
+  </div>
+</main>

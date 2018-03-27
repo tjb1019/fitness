@@ -5,6 +5,9 @@ import { AuthGuard } from '@guards/auth.guard';
 import { LoginComponent } from '@components/login/login.component';
 import { SignupComponent } from '@components/signup/signup.component';
 import { HomeComponent } from '@components/home/home.component';
+import { StrengthComponent } from '@components/strength/strength.component';
+import { CardioComponent } from '@components/cardio/cardio.component';
+import { EducationComponent } from '@components/education/education.component';
 
 export const ROUTES: Route[] = [
   {
@@ -18,6 +21,21 @@ export const ROUTES: Route[] = [
   {
     path: '',
     component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'strength',
+    component: StrengthComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'cardio',
+    component: CardioComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'education',
+    component: EducationComponent,
     canActivate: [AuthGuard]
   }
 ];

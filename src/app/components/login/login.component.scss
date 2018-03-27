@@ -6,5 +6,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 1s;
+  animation: fadeIn 0.5s;
+  background-image: url('~assets/images/steps.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+
+  a {
+    color: $color-brand;
+    text-decoration: none;
+
+    &:focus {
+      outline-color: $color-brand;
+    }
+  }
 }

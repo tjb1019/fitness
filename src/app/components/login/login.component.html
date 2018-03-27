@@ -2,10 +2,10 @@
   <h1 *ngIf="!loggingIn">myFitness Tracker</h1>
   <form name="loginForm" (submit)="login()" *ngIf="!loggingIn">
     <label for="username">Username</label>
-    <input type="text" name="username" autofocus="true">
+    <input required type="text" name="username" autofocus="true">
     <label for="password">Password</label>
-    <input type="password" name="password">
-    <button type="submit">Login</button>
+    <input required type="password" name="password">
+    <button type="submit" class="primary">Login</button>
   </form>
   <a routerLink="/signup" *ngIf="!loggingIn">Don't have an account? Click here to sign up!</a>
   <div class="loader" *ngIf="loggingIn">Logging in...</div>

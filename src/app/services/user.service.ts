@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from '@models/user';
 
@@ -7,7 +8,7 @@ export class UserService {
 
   user: User;
 
-  constructor() {
+  constructor(private router: Router) {
     const userData = JSON.parse(localStorage.getItem('userData'));
     if (userData) {
       this.user = new User(userData.username);
@@ -23,6 +24,7 @@ export class UserService {
   logout(): void {
     this.user = null;
     localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
 }
