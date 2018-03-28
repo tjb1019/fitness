@@ -1,23 +1,23 @@
 <main>
-  <div class="banner">
-    <div class="welcome">
-      <h1>Good morning, {{ user.user.username }}!</h1>
-    </div>
-    <div class="date">
-      <img src="assets/icons/calendar.svg" alt="Calendar icon">
-      <span>{{ dayText }}, {{ month }} {{ dayNum }}, {{ year }}</span>
-    </div>
-  </div>
-  <div class="overview">
+  <app-dashboard-banner></app-dashboard-banner>
+  <section id="dashboard">
+    <!-- strength card -->
     <div class="card">
       <div class="card-header">
         <h2>Strength</h2>
       </div>
+      <div class="card-body">
+
+      </div>
     </div>
+    <!-- cardio card -->
     <div class="card">
       <div class="card-header">
         <h2>Cardio</h2>
       </div>
+      <div class="card-body">
+
+      </div>
     </div>
-  </div>
+  </section>
 </main>

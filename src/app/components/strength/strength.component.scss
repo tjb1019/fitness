@@ -1,0 +1,19 @@
+@import 'variables';
+
+header {
+  display: flex;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  background-image: url('~assets/images/strength.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+    h1 {
+      margin: 0;
+      padding-left: 20px;
+      font-size: $text-header;
+      color: white;
+    }
+}

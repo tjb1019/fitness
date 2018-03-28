@@ -21,6 +21,7 @@ import { StrengthComponent } from './components/strength/strength.component';
 import { CardioComponent } from './components/cardio/cardio.component';
 import { EducationComponent } from './components/education/education.component';
 import { HeaderComponent } from './components/header/header.component';
+import { DashboardBannerComponent } from './components/dashboard-banner/dashboard-banner.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HeaderComponent } from './components/header/header.component';
     StrengthComponent,
     CardioComponent,
     EducationComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardBannerComponent
   ],
   imports: [
     BrowserModule,

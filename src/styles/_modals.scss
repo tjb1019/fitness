@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import 'variables';
 
 div.modal-overlay {
     display: none;
@@ -8,12 +8,12 @@ div.modal-overlay {
     height: 100%;
     width: 100%;
     z-index: 5;
-    background: hsla(0, 0%, 0%, 0.8);
+    background: hsla(0, 0%, 0%, 0.7);
 
     div.modal {
         margin: auto;
         width: 70%;
-        background: $color-light;
+        background: white;
         box-shadow: 5px 5px 8px 0 hsla(0, 0%, 0%, 0.5);
         animation: fadeInUp 0.25s;
 
@@ -22,25 +22,25 @@ div.modal-overlay {
             justify-content: space-between;
             align-items: center;
             padding: 15px 15px;
-            background: $color-light;
-            color: $color-dark;
-            border-top: 8px solid $color-primary;
-            border-bottom: 8px solid $color-primary;
+            background: white;
+            color: $color-primary;
+            //border-top: 8px solid $color-primary;
+            //border-bottom: 8px solid $color-primary;
 
             h3 {
                 margin: 0;
-                font-family: $modal-header-font;
+                //font-family: $modal-header-font;
             }
 
             span.close {
                 font-size: 40px;
-                color: $color-grey-light;
+                color: $color-tertiary;
                 transition: 0.25s;
 
                 &:hover,
                 &:focus {
                     cursor: pointer;
-                    color: $color-dark;
+                    color: $color-primary;
                 }
             }
         }

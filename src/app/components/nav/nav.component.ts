@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { UserService } from '@services/user.service';
 
@@ -15,14 +14,11 @@ export class NavComponent implements OnInit {
   navItems: NavItem[];
   activeRoute: NavItem;
 
-  constructor(
-    public user: UserService,
-    private router: Router
-  ) { }
+  constructor(public user: UserService) { }
 
   ngOnInit() {
     this.navItems = NAV_ITEMS;
-    switch (this.router.url) {
+    switch (window.location.pathname) {
       case '/':
         this.activeRoute = this.navItems[0];
         break;

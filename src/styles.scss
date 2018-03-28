@@ -3,6 +3,7 @@
 @import 'buttons';
 @import 'icons';
 @import 'spinners';
+@import 'modals';
 
 html {
   font-size: 10px;
@@ -14,9 +15,12 @@ body {
   line-height: 1.6;
 }
 
-span.pop {
-  padding: 0 10px;
-  border-radius: 5px;
-  background: $color-brand;
-  color: white;
+// every router view is wrapped in a main tag
+main {
+  background: $color-background;
+  animation: fadeIn 0.5s;
+}
+
+section {
+  padding: 0 60px;
 }
