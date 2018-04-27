@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Chart } from 'chart.js';
+
+import { ModalService } from '@services/modal.service';
 
 @Component({
   selector: 'app-strength',
@@ -7,30 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StrengthComponent implements OnInit {
 
-  modalOverlay: HTMLElement;
-  close: HTMLElement;
-  modalTitle: string;
+  @ViewChild('strengthChart') strengthChart: ElementRef;
 
-  constructor() { }
+  constructor(public modal: ModalService) { }
 
   ngOnInit() {
-    this.modalOverlay = <HTMLElement>document.querySelector('.modal-overlay');
-    this.close = <HTMLElement>document.querySelector('.close');
-  }
-
-  openModal(): void {
-    this.modalOverlay.setAttribute('style', 'display: flex');
-    this.modalTitle = 'Modal Title';
-  }
-
-  closeClick() {
-    this.modalOverlay.setAttribute('style', 'display: none');
-  }
-
-  outsideClick(e) {
-    if (e.target == this.modalOverlay) {
-      this.modalOverlay.setAttribute('style', 'display: none');
-    }
   }
 
 }

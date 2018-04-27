@@ -1,3 +1,9 @@
-<p>
-  header works!
-</p>
+<header>
+  <div class="greeting">
+    <h1>{{ greeting }}, {{ user.user.username }}!</h1>
+  </div>
+  <div class="date">
+    <img src="assets/icons/calendar.svg" alt="Calendar icon">
+    <span>{{ dayText }}, {{ month }} {{ dayNum }}, {{ year }}</span>
+  </div>
+</header>

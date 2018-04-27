@@ -6,8 +6,6 @@ section#dashboard {
   div.card {
     flex: 1;
     height: 400px;
-    background: white;
-    box-shadow: $shadow-regular;
 
     &:nth-child(1) {
       margin-right: 25px;
@@ -21,10 +19,6 @@ section#dashboard {
     }
 
     div.card-header {
-      display: flex;
-      align-items: center;
-      height: 100px;
-      padding-left: 10px;
       background-image: url('~assets/images/strength.jpg');
       background-position: center;
       background-size: cover;

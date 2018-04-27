@@ -52,4 +52,9 @@ router.use((req, res, next) => {
   }
 });
 
+// new cardio record
+router.get('/cardio', (req, res) => {
+  console.log(req.decoded.username);
+});
+
 module.exports = router;

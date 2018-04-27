@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import 'variables';
 
 button {
   text-transform: uppercase;
@@ -25,6 +25,20 @@ button {
     &:hover {
       background: $color-brand;
       color: $color-primary;
+    }
+  }
+
+  // solid
+  &.solid {
+    background: $color-brand;
+    border: 1px solid $color-brand;
+    color: $color-primary;
+    transition: 0.15s;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-brand;
+      border-color: $color-primary;
     }
   }
 }

@@ -2,4 +2,14 @@
   <header>
     <h1>Cardio</h1>
   </header>
+  <section id="cardio">
+    <h1>Add Cardio Record</h1>
+    <form name="addCardioForm" (submit)="addCardio()">
+      <label for="activity">Activity</label>
+      <input required type="text" name="activity">
+      <label for="duration">Duration (minutes)</label>
+      <input required type="number" name="duration" min="5" step="5" value="15">
+      <button type="submit" class="solid">Create</button>
+    </form>
+  </section>
 </main>

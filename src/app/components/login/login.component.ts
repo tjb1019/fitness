@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 import { UserService } from '@services/user.service';
+import { ApiService } from '@services//api.service';
 
 import { environment } from '@environments/environment';
 
@@ -17,9 +18,9 @@ export class LoginComponent implements OnInit {
   loggingIn: boolean;
 
   constructor(
-    private http: HttpClient,
     private router: Router,
-    private user: UserService
+    private user: UserService,
+    private api: ApiService
   ) { }
 
   ngOnInit() {
@@ -35,17 +36,17 @@ export class LoginComponent implements OnInit {
       username: this.form.username.value,
       password: this.form.password.value
     }
-    this.http.post(`${environment.apiPath}/login`, body).subscribe(
-      response => {
-        const token = response['token'];
-        this.user.init(this.form.username.value, token);
-        this.router.navigate(['/']);
-      },
-      error => {
-        console.error(error);
-      },
-      () => this.loggingIn = false
-    );
+    this.api.login(body)
+    .then(response => {
+      const token = response['token'];
+      this.user.init(this.form.username.value, token);
+      this.router.navigate(['/']);
+    })
+    .catch(error => {
+      console.error(error);
+      // TODO add error to ui
+    })
+    .then(() => this.loggingIn = false);
   }
 
 }

@@ -9,6 +9,7 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  box-shadow: $shadow-light, 0 -4px 6px 0 hsla(0, 0%, 0%, 0.1);
 
     h1 {
       margin: 0;

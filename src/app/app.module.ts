@@ -8,20 +8,22 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { ROUTES } from './routes/routes';
 
+import { ApiService } from '@services/api.service';
 import { AuthGuard } from '@guards/auth.guard';
 import { HttpInterceptorService } from '@services/http-interceptor.service';
 import { UserService } from '@services/user.service';
+import { ModalService } from '@services/modal.service';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { NavComponent } from './components/nav/nav.component';
-import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StrengthComponent } from './components/strength/strength.component';
 import { CardioComponent } from './components/cardio/cardio.component';
 import { EducationComponent } from './components/education/education.component';
-import { HeaderComponent } from './components/header/header.component';
-import { DashboardBannerComponent } from './components/dashboard-banner/dashboard-banner.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,12 @@ import { DashboardBannerComponent } from './components/dashboard-banner/dashboar
     LoginComponent,
     SignupComponent,
     NavComponent,
-    HomeComponent,
+    HeaderComponent,
+    DashboardComponent,
     StrengthComponent,
     CardioComponent,
     EducationComponent,
-    HeaderComponent,
-    DashboardBannerComponent
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -44,13 +46,15 @@ import { DashboardBannerComponent } from './components/dashboard-banner/dashboar
     HttpClientModule
   ],
   providers: [
+    ApiService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
       multi: true
     },
-    UserService
+    UserService,
+    ModalService
   ],
   bootstrap: [AppComponent]
 })
