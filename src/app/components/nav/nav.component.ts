@@ -28,8 +28,11 @@ export class NavComponent implements OnInit {
       case '/cardio':
         this.activeRoute = this.navItems[2];
         break;
-      case '/education':
+      case '/challenges':
         this.activeRoute = this.navItems[3];
+        break;
+      case '/education':
+        this.activeRoute = this.navItems[4];
         break;
     }
   }

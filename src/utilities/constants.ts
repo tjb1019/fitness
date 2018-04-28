@@ -12,6 +12,10 @@ export const NAV_ITEMS = [
     path: '/cardio'
   },
   {
+    name: 'challenges',
+    path: '/challenges'
+  },
+  {
     name: 'education',
     path: '/education'
   }

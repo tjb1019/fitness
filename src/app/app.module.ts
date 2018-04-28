@@ -22,6 +22,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StrengthComponent } from './components/strength/strength.component';
 import { CardioComponent } from './components/cardio/cardio.component';
+import { ChallengesComponent } from './components/challenges/challenges.component';
 import { EducationComponent } from './components/education/education.component';
 import { ModalComponent } from './components/modal/modal.component';
 
@@ -35,6 +36,7 @@ import { ModalComponent } from './components/modal/modal.component';
     DashboardComponent,
     StrengthComponent,
     CardioComponent,
+    ChallengesComponent,
     EducationComponent,
     ModalComponent
   ],

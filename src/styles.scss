@@ -5,9 +5,15 @@
 @import 'icons';
 @import 'spinners';
 @import 'modals';
+@import 'calendar';
 
 html {
   font-size: 10px;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {

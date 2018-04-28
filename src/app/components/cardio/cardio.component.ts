@@ -26,8 +26,8 @@ export class CardioComponent implements OnInit {
 
     if (activity && duration) {
       this.api.addCardio({activity: activity, duration: duration})
-      .then(response => alert('saved'))
-      .catch(error => alert('failed'));
+      .then(response => alert(response))
+      .catch(error => alert(error));
     }
   }
 

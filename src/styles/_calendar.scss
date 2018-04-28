@@ -1,0 +1,70 @@
+@import 'variables';
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0;
+  background: white;
+  box-shadow: $shadow-light;
+
+  .month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    background: $color-brand;
+    color: white;
+
+    h2 {
+      margin: 0;
+    }
+
+    .prev,
+    .next {
+      padding: 5px;
+      color: $color-background;
+      transition: 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        background: darken($color-brand, 10%);
+      }
+    }
+  }
+
+  .weekdays {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #ddd;
+
+    .weekday {
+      flex: 1;
+      padding: 5px 0;
+      text-align: center;
+    }
+  }
+
+  .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #eee;
+    color: $color-primary;
+
+    .day {
+      height: 100px;
+      padding: 10px;
+      border: 0.5px solid $color-background;
+
+      &:hover {
+        cursor: pointer;
+        background: darken(#eee, 10%);
+      }
+    }
+  }
+}
