@@ -53,6 +53,32 @@ router.use((req, res, next) => {
 });
 
 // new cardio record
+router.post('/cardio', async(req, res) => {
+  const [year, month, day] = utilties.dissectDate(req.body.date);
+  const activity = req.body.activity;
+  const duration = req.body.duration;
+
+  const user = await User.findOne({username: req.decoded.username})
+    .catch(error => res.status(400).json({message: 'Invalid username'}));
+
+  user.history.year.month.day.cardio.push({
+    activity: activity,
+    duration: duration,
+    year: year,
+    month: month,
+    day: day
+  });
+
+  user.save()
+   .then(user => {
+    return res.status(201).json({user: user});
+   })
+   .catch(error => {
+    return res.status(500).json({message: 'Failed to add cardio record to db'});
+   });
+});
+
+// get cardio records
 router.get('/cardio', (req, res) => {
   console.log(req.decoded.username);
 });

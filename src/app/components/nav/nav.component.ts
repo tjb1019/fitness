@@ -31,7 +31,7 @@ export class NavComponent implements OnInit {
       case '/challenges':
         this.activeRoute = this.navItems[3];
         break;
-      case '/education':
+      case '/calendar':
         this.activeRoute = this.navItems[4];
         break;
     }

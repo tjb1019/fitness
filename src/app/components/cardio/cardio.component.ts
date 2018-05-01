@@ -16,18 +16,19 @@ export class CardioComponent implements OnInit {
   ngOnInit() {
   }
 
-  ngOnViewInit() {
+  ngAfterViewInit() {
     this.form = document.forms['addCardioForm'];
   }
 
   addCardio() {
+    const date = this.form.date.value;
     const activity = this.form.activity.value;
     const duration = this.form.duration.value;
 
-    if (activity && duration) {
-      this.api.addCardio({activity: activity, duration: duration})
-      .then(response => alert(response))
-      .catch(error => alert(error));
+    if (date && activity && duration) {
+      this.api.addCardio({date: date, activity: activity, duration: duration})
+        .then(response => console.log(response))
+        .catch(error => console.error(error));
     }
   }
 

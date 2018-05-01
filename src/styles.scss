@@ -4,8 +4,8 @@
 @import 'buttons';
 @import 'icons';
 @import 'spinners';
+@import 'loading';
 @import 'modals';
-@import 'calendar';
 
 html {
   font-size: 10px;
@@ -24,6 +24,7 @@ body {
 
 // every router view is wrapped in a main tag
 main {
+  padding-bottom: 25px;
   background: $color-background;
   animation: fadeIn 0.5s;
 }

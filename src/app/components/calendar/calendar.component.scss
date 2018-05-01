@@ -1,69 +1,108 @@
 @import 'variables';
 
+.key {
+  margin-bottom: 5px;
+  font-weight: $text-heavy;
+  text-align: right;
+
+  .pill {
+    display: inline-block;
+    background: #3080e8;
+    width: 25px;
+    height: 10px;
+    margin-right: 15px;
+    border-radius: 500px;
+
+    &:nth-child(2) {
+      background: #e83a30;
+    }
+
+    &:nth-child(3) {
+      background: #8930e8;
+    }
+  }
+}
+
 .calendar {
   display: flex;
   flex-direction: column;
-  margin: 50px 0;
   background: white;
   box-shadow: $shadow-light;
 
+  // month container
   .month {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 10px;
-    background: $color-brand;
+    background: $color-primary;
     color: white;
 
+    // the month name itself
     h2 {
       margin: 0;
     }
 
+    // prev, next arrows
     .prev,
     .next {
       padding: 5px;
+      font-size: 2rem;
       color: $color-background;
       transition: 0.2s;
 
       &:hover {
         cursor: pointer;
-        background: darken($color-brand, 10%);
+        background: $color-accent;
       }
     }
   }
 
+  // weekdays container
   .weekdays {
     width: 100%;
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    background: #ddd;
+    //background: #ddd;
+    background: $color-brand;
 
     .weekday {
       flex: 1;
       padding: 5px 0;
       text-align: center;
+      border-right: 0.5px solid $color-background;
+
+      &:nth-child(1) {
+        border-left: 0.5px solid $color-background;
+      }
     }
   }
 
+  // days of month container
   .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     list-style: none;
     margin: 0;
     padding: 0;
-    background: #eee;
     color: $color-primary;
 
     .day {
       height: 100px;
       padding: 10px;
+      background: white;
       border: 0.5px solid $color-background;
+      transition: 0.1s;
 
       &:hover {
         cursor: pointer;
-        background: darken(#eee, 10%);
+        background: #ddd;
+      }
+
+      &.active {
+        background: #ddd;
       }
     }
   }

@@ -16,8 +16,8 @@ export const NAV_ITEMS = [
     path: '/challenges'
   },
   {
-    name: 'education',
-    path: '/education'
+    name: 'my calendar',
+    path: '/calendar'
   }
 ];
 
@@ -32,7 +32,7 @@ export const DAY_MAP = {
   4: 'Thursday',
   5: 'Friday',
   6: 'Saturday',
-  7: 'Sunday'
+  0: 'Sunday'
 };
 
 export const MONTH_MAP = {

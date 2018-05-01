@@ -23,7 +23,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StrengthComponent } from './components/strength/strength.component';
 import { CardioComponent } from './components/cardio/cardio.component';
 import { ChallengesComponent } from './components/challenges/challenges.component';
-import { EducationComponent } from './components/education/education.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
@@ -37,7 +37,7 @@ import { ModalComponent } from './components/modal/modal.component';
     StrengthComponent,
     CardioComponent,
     ChallengesComponent,
-    EducationComponent,
+    CalendarComponent,
     ModalComponent
   ],
   imports: [

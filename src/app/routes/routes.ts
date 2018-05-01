@@ -8,7 +8,7 @@ import { DashboardComponent } from '@components/dashboard/dashboard.component';
 import { StrengthComponent } from '@components/strength/strength.component';
 import { CardioComponent } from '@components/cardio/cardio.component';
 import { ChallengesComponent } from '@components/challenges/challenges.component';
-import { EducationComponent } from '@components/education/education.component';
+import { CalendarComponent } from '@components/calendar/calendar.component';
 
 export const ROUTES: Route[] = [
   {
@@ -40,8 +40,8 @@ export const ROUTES: Route[] = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'education',
-    component: EducationComponent,
+    path: 'calendar',
+    component: CalendarComponent,
     canActivate: [AuthGuard]
   }
 ];

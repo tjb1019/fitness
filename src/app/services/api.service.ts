@@ -14,6 +14,10 @@ export class ApiService {
     return this.http.post(`${environment.apiPath}/login`, body).toPromise();
   }
 
+  getCardio(): Promise<Object> {
+    return this.http.get(`${environment.apiPath}/cardio`).toPromise();
+  }
+
   addCardio(body: any): Promise<Object> {
     return this.http.post(`${environment.apiPath}/cardio`, body).toPromise();
   }
